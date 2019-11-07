@@ -1,0 +1,128 @@
+// For those who want the bleeding edge
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: "maven-publish"
+
+javadoc {
+    failOnError = false
+}
+
+
+
+version = "7.1.6-0"
+group= "golems_mineralogy"
+archivesBaseName = "MineralogyGolemsAddon-1.12"
+
+minecraft {
+    version = "1.12.2-14.23.5.2768"
+    runDir = "run"
+
+    mappings = "stable_39"
+    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+
+repositories {
+    mavenCentral()
+    maven { // MMD
+		name 'mmd'
+		url = "https://maven.mcmoddev.com/" 
+	}
+    maven { // TOP
+        name 'tterrag maven'
+        url "https://maven.tterrag.com/"
+    }
+    maven { // HWYLA
+        name 'tehnut'
+        url 'http://tehnut.info/maven/'
+    }
+}
+
+dependencies {
+    deobfCompile ("com.mcmoddev:ExtraGolems:1.12-7.1.6+") {
+        exclude group: 'mezz.jei'
+    }
+    deobfCompile ("com.mcmoddev:Mineralogy:1.12.2-3.8.0.53") {
+		exclude group: 'mezz.jei'
+    }
+	//runtime "mcjty.theoneprobe:TheOneProbe-${mc_version}:${mc_version}-${top_version}:api"
+	//deobfCompile ("mcp.mobius.waila:Hwyla:1.8.26-B41_1.12.2") {
+	//	exclude group: 'mezz.jei'
+    //}
+
+}
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+task deobfJar(type: Jar) {
+    classifier = "deobf"
+    from sourceSets.main.output
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = "javadoc"
+    from javadoc.getDestinationDir()
+}
+
+artifacts {
+    archives deobfJar
+    archives sourceJar
+    archives javadocJar
+}
+/*
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.group
+            artifactId project.archivesBaseName
+            version project.version
+            from components.java
+            artifact sourceJar {
+                classifier "sources"
+            }
+            artifact deobfJar {
+                classifier "deobf"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username secret.username
+                password secret.password
+            }
+            url secret.url
+        }
+    }
+}
+*/

@@ -45,8 +45,13 @@ public class MineralConfig {
 	// QUARTZITE: 4, 15, 1
 	// NOVACULITE: 3, 15, 1
 	
+	private static boolean useRawOrSmooth;
+	
 	public static void mainRegistry(Configuration config) {
 		config.load();
+		useRawOrSmooth = config.getBoolean("Use Raw or Smooth", Configuration.CATEGORY_GENERAL, false, 
+				"When true, golems can be built using both smooth and raw stone");
+		
 		
 		// BASE METAL GOLEMS:  initialize and register with GolemLookup
 //			GolemLookup.addConfig(EntityAdamantineGolem.class,
@@ -116,5 +121,9 @@ public class MineralConfig {
 				new GolemConfigSet(config, MGolemNames.TUFF, 55.0D, 3.0F));
 	
 		config.save();
+	}
+	
+	public static boolean useRawOrSmooth() {
+		return useRawOrSmooth;
 	}
 }

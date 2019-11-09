@@ -6,19 +6,19 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "mineralogy:marble",
+                    "name": "mineralogy:phosphorous_dust",
 					"weight": 1,
 					"functions": [
                         {
                             "function": "set_count",
                             "count": {
-                                "min": 0,
-                                "max": 2
+                                "min": 4,
+                                "max": 8
                             }
                         },
                         {
                             "function": "looting_enchant",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }

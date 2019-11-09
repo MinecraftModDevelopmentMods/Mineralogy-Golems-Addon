@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "mineralogy:marble",
+                    "name": "mineralogy:quartzite",
 					"weight": 1,
 					"functions": [
                         {

@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "mineralogy:marble",
+                    "name": "mineralogy:scoria",
 					"weight": 1,
 					"functions": [
                         {

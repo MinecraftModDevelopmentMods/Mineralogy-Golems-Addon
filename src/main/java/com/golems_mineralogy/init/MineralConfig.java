@@ -3,6 +3,7 @@ package com.golems_mineralogy.init;
 import com.golems.util.GolemConfigSet;
 import com.golems.util.GolemLookup;
 import com.golems_mineralogy.entity.*;
+import com.golems_mineralogy.entity.MineralGolemBase.*;
 
 import net.minecraftforge.common.config.Configuration;
 
@@ -52,12 +53,67 @@ public class MineralConfig {
 //					new GolemConfigSet(config, "Adamantine Golem", 240.0D, 21.0F)
 //					.addKey(EntityAdamantineGolem.DAMAGE_TOUGH, true, "Whether this golem deals extra damage to tough mobs")
 //					.addKey(EntityAdamantineGolem.ALLOW_RESIST, true, "Whether this golem reduces damage dealt to it"));
-//			GolemLookup.addConfig(EntityAntimonyGolem.class,
-//					new GolemConfigSet(config, "Antimony Golem", 50.0D, 4.5F));
 		GolemLookup.addConfig(EntityAmphiboliteGolem.class, 
 				new GolemConfigSet(config, MGolemNames.AMPHIBOLITE, 65.0D, 4.5F));
 		GolemLookup.addConfig(EntityAndesiteGolem.class, 
 				new GolemConfigSet(config, MGolemNames.ANDESITE, 55.0D, 3.0F));
+		
+		// TODO replace with actual stats
+		GolemLookup.addConfig(EntityBasaltGolem.class, 
+				new GolemConfigSet(config, MGolemNames.BASALT, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityBasalticGlassGolem.class, 
+				new GolemConfigSet(config, MGolemNames.BASALTIC_GLASS, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityConglomerateGolem.class, 
+				new GolemConfigSet(config, MGolemNames.CONGLOMERATE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityDiabaseGolem.class, 
+				new GolemConfigSet(config, MGolemNames.DIABASE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityDioriteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.DIORITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityDolomiteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.DOLOMITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityGabbroGolem.class, 
+				new GolemConfigSet(config, MGolemNames.GABBRO, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityGneissGolem.class, 
+				new GolemConfigSet(config, MGolemNames.GNEISS, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityGraniteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.GRANITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityHornfelsGolem.class, 
+				new GolemConfigSet(config, MGolemNames.HORNFELS, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityLimestoneGolem.class, 
+				new GolemConfigSet(config, MGolemNames.LIMESTONE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityMarbleGolem.class, 
+				new GolemConfigSet(config, MGolemNames.MARBLE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityNovaculiteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.NOVACULITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityPegmatiteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.PEGMATITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityPeridotiteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.PERIDOTITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityPhosphorousGolem.class, 
+				new GolemConfigSet(config, MGolemNames.PHOSPHOROUS, 55.0D, 3.0F)
+				.addKey(EntityPhosphorousGolem.ALLOW_SPECIAL, true, "Whether this golem burns spontaneously"));
+		GolemLookup.addConfig(EntityPhylliteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.PHYLLITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityQuartziteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.QUARTZITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityRhyoliteGolem.class, 
+				new GolemConfigSet(config, MGolemNames.RHYOLITE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityRockSaltGolem.class, 
+				new GolemConfigSet(config, MGolemNames.ROCK_SALT, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntitySchistGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SCHIST, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityScoriaGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SCORIA, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityShaleGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SHALE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntitySiltstoneGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SILTSTONE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntitySlateGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SLATE, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntitySulfurGolem.class, 
+				new GolemConfigSet(config, MGolemNames.SULFUR, 55.0D, 3.0F));
+		GolemLookup.addConfig(EntityTuffGolem.class, 
+				new GolemConfigSet(config, MGolemNames.TUFF, 55.0D, 3.0F));
 	
 		config.save();
 	}

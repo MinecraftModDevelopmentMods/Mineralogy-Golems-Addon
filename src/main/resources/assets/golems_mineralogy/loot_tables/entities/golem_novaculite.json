@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "mineralogy:andesite",
+                    "name": "mineralogy:novaculite",
 					"weight": 1,
 					"functions": [
                         {

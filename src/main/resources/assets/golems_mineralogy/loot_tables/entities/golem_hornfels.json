@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "mineralogy:andesite",
+                    "name": "mineralogy:hornfels",
 					"weight": 1,
 					"functions": [
                         {

@@ -24,7 +24,7 @@ public final class InterModComm {
 	public static final String NOVACULITE = "novaculite";
 	public static final String PEGMATITE = "pegmatite";
 	public static final String PERIDOTITE = "peridotite";
-	public static final String PHOSPHORUS = "phosphorus";
+	public static final String PHOSPHORUS = "phosphorous_block";
 	public static final String PHYLLITE = "phyllite";
 	public static final String QUARTZITE = "quartzite";
 	public static final String RHYOLITE = "rhyolite";
@@ -34,6 +34,6 @@ public final class InterModComm {
 	public static final String SHALE = "shale";
 	public static final String SILTSTONE = "siltstone";
 	public static final String SLATE = "slate";
-	public static final String SULFUR = "sulfur";
+	public static final String SULFUR = "sulfur_block";
 	public static final String TUFF = "tuff";
 }

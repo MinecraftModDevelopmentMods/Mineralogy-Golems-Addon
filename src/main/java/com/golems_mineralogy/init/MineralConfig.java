@@ -104,7 +104,9 @@ public class MineralConfig {
 		GolemLookup.addConfig(EntityRhyoliteGolem.class, 
 				new GolemConfigSet(config, MGolemNames.RHYOLITE, 55.0D, 3.0F));
 		GolemLookup.addConfig(EntityRockSaltGolem.class, 
-				new GolemConfigSet(config, MGolemNames.ROCK_SALT, 55.0D, 3.0F));
+				new GolemConfigSet(config, MGolemNames.ROCK_SALT, 55.0D, 3.0F)
+				.addKey(EntityRockSaltGolem.ALLOW_SPECIAL, true, "Whether the golem can emit light")
+				.addKey(EntityRockSaltGolem.FREQUENCY, 2, 1, 24000, "Number of ticks between light updates"));
 		GolemLookup.addConfig(EntitySchistGolem.class, 
 				new GolemConfigSet(config, MGolemNames.SCHIST, 55.0D, 3.0F));
 		GolemLookup.addConfig(EntityScoriaGolem.class, 

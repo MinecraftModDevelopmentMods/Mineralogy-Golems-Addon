@@ -20,7 +20,7 @@ javadoc {
 
 
 
-version = "7.1.6-0"
+version = "7.1.7-0"
 group= "golems_mineralogy"
 archivesBaseName = "MineralogyGolemsAddon-1.12"
 
@@ -49,7 +49,7 @@ repositories {
 }
 
 dependencies {
-    deobfCompile ("com.mcmoddev:ExtraGolems:1.12-7.1.6+") {
+    deobfCompile ("com.mcmoddev:ExtraGolems:1.12-7.1.7+") {
         exclude group: 'mezz.jei'
     }
     deobfCompile ("com.mcmoddev:Mineralogy:1.12.2-3.8.0.53") {

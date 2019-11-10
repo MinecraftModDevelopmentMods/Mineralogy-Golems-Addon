@@ -28,3 +28,5 @@ entity.golems_mineralogy.golem_siltstone.name=Siltstone Golem
 entity.golems_mineralogy.golem_slate.name=Slate Golem
 entity.golems_mineralogy.golem_sulfur_block.name=Sulfur Golem
 entity.golems_mineralogy.golem_tuff.name=Tuff Golem
+
+entitytip.combust_randomly=May combust randomly

@@ -27,8 +27,13 @@ public static final String ALLOW_SPECIAL = "Allow Special: Fire";
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
+		// randomly ignite
 		if(allowBurn && !this.isBurning() && this.getRNG().nextInt(FIRE_CHANCE) == 0) {
 			this.setFire(this.getRNG().nextInt(10) + 8);
+		}
+		// gradually lose health from burning, but not as fire damage
+		if(this.isServerWorld() && this.isBurning() && this.getRNG().nextInt(100) == 0) {
+			this.attackEntityFrom(DamageSource.GENERIC, 0.5F);
 		}
 	}
 

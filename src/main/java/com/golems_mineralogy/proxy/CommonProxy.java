@@ -3,8 +3,6 @@ package com.golems_mineralogy.proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.golems.entity.GolemBase;
 import com.golems.util.GolemLookup;
 import com.golems_mineralogy.entity.*;
@@ -13,9 +11,7 @@ import com.golems_mineralogy.init.InterModComm;
 import com.golems_mineralogy.init.MGolemNames;
 import com.golems_mineralogy.init.MineralConfig;
 import com.golems_mineralogy.init.MineralogyGolems;
-import com.google.common.collect.Sets;
 import com.mcmoddev.mineralogy.init.MineralogyRegistry;
-import com.mcmoddev.mineralogy.util.BlockItemPair;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;

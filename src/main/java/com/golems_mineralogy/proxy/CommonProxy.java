@@ -9,7 +9,7 @@ import com.golems_mineralogy.entity.*;
 import com.golems_mineralogy.entity.MineralGolemBase.*;
 import com.golems_mineralogy.init.InterModComm;
 import com.golems_mineralogy.init.MGolemNames;
-import com.golems_mineralogy.init.MineralConfig;
+import com.golems_mineralogy.init.MineralogyGolemsConfig;
 import com.golems_mineralogy.init.MineralogyGolems;
 import com.mcmoddev.mineralogy.init.MineralogyRegistry;
 
@@ -66,7 +66,7 @@ public class CommonProxy {
 				MineralogyGolems.MODID + "." + golemName, ++entityCount, MineralogyGolems.instance, 16 * 4, 3, true);
 		// make a list of compatible building blocks
 		final List<Block> blocks = new ArrayList<>();
-		if(MineralConfig.useRawOrSmooth() && MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockName)) {
+		if(MineralogyGolemsConfig.useRawOrSmooth() && MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockName)) {
 			blocks.add(MineralogyRegistry.MineralogyBlockRegistry.get(blockName).PairedBlock);
 		}
 		if(MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockName.concat("_smooth"))) {

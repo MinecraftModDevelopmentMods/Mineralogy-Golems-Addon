@@ -123,11 +123,6 @@ public class EntityRockSaltGolem extends MineralGolemBase {
 		protected  IBlockState getStateToPlace(final IBlockState toReplace) {
 			float percentCharge = (float)rocksaltGolem.getCharge() / (float)MAX_CHARGE;
 			int lightLevel = Math.min((int)Math.ceil(15.0F * percentCharge), 15);
-			
-			// DEBUG
-			System.out.println("Golem charge=" + rocksaltGolem.getCharge() 
-				+ "; percent=" + percentCharge + "; lightLevel=" + lightLevel);
-			
 			return GolemItems.blockLightSource.getDefaultState()
 					.withProperty(BlockUtilityGlow.LIGHT_LEVEL, lightLevel);
 		}

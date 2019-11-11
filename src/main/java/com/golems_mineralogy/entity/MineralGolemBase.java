@@ -5,13 +5,16 @@ import com.golems.util.GolemNames;
 import com.golems_mineralogy.init.MGolemNames;
 import com.golems_mineralogy.init.MineralogyGolems;
 
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class MineralGolemBase extends GolemBase {
 	
+	protected int particleDelay = 18;
 	private String golemName = GolemNames.CLAY_GOLEM;
 
 	public MineralGolemBase(final World world, final String name) {
@@ -19,6 +22,8 @@ public class MineralGolemBase extends GolemBase {
 		golemName = name;
 		this.setTextureType(applyTexture());
 		this.setLootTableLoc(MineralogyGolems.MODID, golemName);
+		this.setKnockback(0.6D);
+		this.setCanSwim(false);
 	}
 
 	@Override
@@ -29,6 +34,29 @@ public class MineralGolemBase extends GolemBase {
 	@Override
 	public SoundEvent getGolemSound() {
 		return SoundEvents.BLOCK_STONE_STEP;
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		if (world.isRemote && getParticle() != null && this.getRNG().nextInt(particleDelay) == 0) {
+			final double x = this.rand.nextDouble() - 0.5D * (double) this.width * 0.6D;
+			final double y = this.rand.nextDouble() * (this.height - 0.5D) + 0.5D;
+			final double z = this.rand.nextDouble() - 0.5D * (double) this.width * 0.6D;
+			final double speedX = (this.rand.nextDouble() - 0.5D) * 0.4D;
+			final double speedY = (this.rand.nextDouble() - 0.5D) * 0.4D;
+			final double speedZ = (this.rand.nextDouble() - 0.5D) * 0.4D;
+			this.world.spawnParticle(getParticle(), this.posX + x, this.posY + y, this.posZ + z,
+				speedX, speedY, speedZ);
+		}
+	}
+	
+	protected EnumParticleTypes getParticle() {
+		return null;
+	}
+	
+	protected void setKnockback(final double knockbackResist) {
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(knockbackResist);
 	}
 
 	public static class EntityAmphiboliteGolem extends MineralGolemBase {
@@ -46,12 +74,15 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityBasaltGolem extends MineralGolemBase {
 		public EntityBasaltGolem(World world) {
 			super(world, MGolemNames.BASALT);
+			this.setImmuneToFire(true);
+			this.setKnockback(0.85D);
 		}
 	}
 	
 	public static class EntityBasalticGlassGolem extends MineralGolemBase {
 		public EntityBasalticGlassGolem(World world) {
 			super(world, MGolemNames.BASALTIC_GLASS);
+			this.setImmuneToFire(true);
 		}
 	}
 	
@@ -64,6 +95,8 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityDiabaseGolem extends MineralGolemBase {
 		public EntityDiabaseGolem(World world) {
 			super(world, MGolemNames.DIABASE);
+			this.setImmuneToFire(true);
+			this.setKnockback(0.8D);
 		}
 	}
 	
@@ -82,12 +115,15 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityGabbroGolem extends MineralGolemBase {
 		public EntityGabbroGolem(World world) {
 			super(world, MGolemNames.GABBRO);
+			this.setImmuneToFire(true);
+			this.setKnockback(0.8D);
 		}
 	}
 	
 	public static class EntityGneissGolem extends MineralGolemBase {
 		public EntityGneissGolem(World world) {
 			super(world, MGolemNames.GNEISS);
+			this.setImmuneToFire(true);
 		}
 	}
 	
@@ -107,6 +143,11 @@ public class MineralGolemBase extends GolemBase {
 		public EntityLimestoneGolem(World world) {
 			super(world, MGolemNames.LIMESTONE);
 		}
+		
+		@Override
+		protected EnumParticleTypes getParticle() {
+			return EnumParticleTypes.FALLING_DUST;
+		}
 	}
 	
 	public static class EntityMarbleGolem extends MineralGolemBase {
@@ -124,6 +165,7 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityPegmatiteGolem extends MineralGolemBase {
 		public EntityPegmatiteGolem(World world) {
 			super(world, MGolemNames.PEGMATITE);
+			this.setImmuneToFire(true);
 		}
 	}
 	
@@ -136,12 +178,6 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityPhylliteGolem extends MineralGolemBase {
 		public EntityPhylliteGolem(World world) {
 			super(world, MGolemNames.PHYLLITE);
-		}
-	}
-	
-	public static class EntityQuartziteGolem extends MineralGolemBase {
-		public EntityQuartziteGolem(World world) {
-			super(world, MGolemNames.QUARTZITE);
 		}
 	}
 	
@@ -160,6 +196,7 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityScoriaGolem extends MineralGolemBase {
 		public EntityScoriaGolem(World world) {
 			super(world, MGolemNames.SCORIA);
+			this.setCanSwim(true);
 		}
 	}
 	
@@ -178,6 +215,17 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntitySlateGolem extends MineralGolemBase {
 		public EntitySlateGolem(World world) {
 			super(world, MGolemNames.SLATE);
+		}
+	}
+	
+	public static class EntitySulfurGolem extends MineralGolemBase {
+		public EntitySulfurGolem(World world) {
+			super(world, MGolemNames.SULFUR);
+		}
+		
+		@Override
+		protected EnumParticleTypes getParticle() {
+			return EnumParticleTypes.LAVA;
 		}
 	}
 	

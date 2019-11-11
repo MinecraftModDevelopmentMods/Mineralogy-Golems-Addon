@@ -32,7 +32,7 @@ public class MineralogyGolems {
 	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
-		MineralConfig.mainRegistry(new Configuration(event.getSuggestedConfigurationFile()));
+		MineralogyGolemsConfig.mainRegistry(new Configuration(event.getSuggestedConfigurationFile()));
 		proxy.preInitRenders();
 	}
 	

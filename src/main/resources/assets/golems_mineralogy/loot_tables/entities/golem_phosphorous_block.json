@@ -12,13 +12,13 @@
                         {
                             "function": "set_count",
                             "count": {
-                                "min": 4,
-                                "max": 8
+                                "min": 6,
+                                "max": 12
                             }
                         },
                         {
                             "function": "looting_enchant",
-                            "count": 2
+                            "count": 4
                         }
                     ]
                 }

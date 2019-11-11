@@ -45,7 +45,7 @@ public class CommonProxy {
 		register(EntityNovaculiteGolem.class, InterModComm.NOVACULITE);
 		register(EntityPegmatiteGolem.class, InterModComm.PEGMATITE);
 		register(EntityPeridotiteGolem.class, InterModComm.PERIDOTITE);
-		register(EntityPhosphorousGolem.class, MGolemNames.PHOSPHOROUS, InterModComm.PHOSPHORUS);
+		register(EntityPhosphorousGolem.class, MGolemNames.PHOSPHOROUS, null, InterModComm.PHOSPHORUS);
 		register(EntityPhylliteGolem.class, InterModComm.PHYLLITE);
 		register(EntityQuartziteGolem.class, InterModComm.QUARTZITE);
 		register(EntityRhyoliteGolem.class, InterModComm.RHYOLITE);
@@ -55,22 +55,23 @@ public class CommonProxy {
 		register(EntityShaleGolem.class, InterModComm.SHALE);
 		register(EntitySiltstoneGolem.class, InterModComm.SILTSTONE);
 		register(EntitySlateGolem.class, InterModComm.SLATE);
-		register(EntitySulfurGolem.class, MGolemNames.SULFUR, InterModComm.SULFUR);
+		register(EntitySulfurGolem.class, MGolemNames.SULFUR, null, InterModComm.SULFUR);
 		register(EntityTuffGolem.class, InterModComm.TUFF);
 	}
 
 	protected static void register(final Class<? extends GolemBase> entityClass, final String golemName, 
-			final String blockName) {
+			final String blockNameRaw, final String blockNameSmooth) {
 		// register the entity with Forge
 		EntityRegistry.registerModEntity(new ResourceLocation(MineralogyGolems.MODID, golemName), entityClass,
 				MineralogyGolems.MODID + "." + golemName, ++entityCount, MineralogyGolems.instance, 16 * 4, 3, true);
 		// make a list of compatible building blocks
 		final List<Block> blocks = new ArrayList<>();
-		if(MineralogyGolemsConfig.useRawOrSmooth() && MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockName)) {
-			blocks.add(MineralogyRegistry.MineralogyBlockRegistry.get(blockName).PairedBlock);
+		if(MineralogyGolemsConfig.useRawOrSmooth() && blockNameRaw != null 
+				&& MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockNameRaw)) {
+			blocks.add(MineralogyRegistry.MineralogyBlockRegistry.get(blockNameRaw).PairedBlock);
 		}
-		if(MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockName.concat("_smooth"))) {
-			blocks.add(MineralogyRegistry.MineralogyBlockRegistry.get(blockName.concat("_smooth")).PairedBlock);
+		if(blockNameSmooth != null && MineralogyRegistry.MineralogyBlockRegistry.containsKey(blockNameSmooth)) {
+			blocks.add(MineralogyRegistry.MineralogyBlockRegistry.get(blockNameSmooth).PairedBlock);
 		}
 		final Block[] blockArray = blocks.isEmpty() ? new Block[] {} : blocks.toArray(new Block[blocks.size()]);
 		GolemLookup.addGolem(entityClass, blockArray);
@@ -79,7 +80,7 @@ public class CommonProxy {
 	}
 	
 	protected static void register(final Class<? extends GolemBase> entityClass, final String blockName) {
-		register(entityClass, "golem_".concat(blockName), blockName);
+		register(entityClass, "golem_".concat(blockName), blockName, blockName.concat("_smooth"));
 	}
 
 	protected static void registerLootTable(final String name) {

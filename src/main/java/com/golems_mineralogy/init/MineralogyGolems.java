@@ -19,7 +19,7 @@ public class MineralogyGolems {
 	public static final String MODID = "golems_mineralogy";
 	public static final String DEPENDENCIES = "required:forge@[14.23.4.2768,);required-after:golems@[7.1.6,);required-after:mineralogy@[3.8.0.53,)";
 	public static final String NAME = "Mineralogy Golems";
-	public static final String VERSION = "7.1.6-1";
+	public static final String VERSION = "7.1.7-1";
 	public static final String MCVERSION = "1.12.2";
 	
 	@Mod.Instance(MineralogyGolems.MODID)

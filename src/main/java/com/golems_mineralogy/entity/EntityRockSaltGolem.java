@@ -24,7 +24,7 @@ public class EntityRockSaltGolem extends MineralGolemBase {
 	private static final DataParameter<Integer> CHARGE = EntityDataManager.createKey(EntityRockSaltGolem.class,
 			DataSerializers.VARINT);
 	private static final String KEY_CHARGE = "ChargeRemaining";
-	private static final int MAX_CHARGE = 1000;
+	private static final int MAX_CHARGE = 5000;
 	
 	public static final String ALLOW_SPECIAL = "Allow Special: Emit Light";
 	public static final String FREQUENCY = "Light Frequency";

@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class MineralGolemBase extends GolemBase {
 	
-	protected int particleDelay = 18;
+	protected final int particleDelay = 18;
 	private String golemName = GolemNames.CLAY_GOLEM;
 
 	public MineralGolemBase(final World world, final String name) {
@@ -39,7 +39,7 @@ public class MineralGolemBase extends GolemBase {
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (world.isRemote && getParticle() != null && this.getRNG().nextInt(particleDelay) == 0) {
+		if (world.isRemote && getParticle() != null && this.getRNG().nextInt(Math.max(1, particleDelay)) == 0) {
 			final double x = this.rand.nextDouble() - 0.5D * (double) this.width * 0.6D;
 			final double y = this.rand.nextDouble() * (this.height - 0.5D) + 0.5D;
 			final double z = this.rand.nextDouble() - 0.5D * (double) this.width * 0.6D;
@@ -142,11 +142,6 @@ public class MineralGolemBase extends GolemBase {
 	public static class EntityLimestoneGolem extends MineralGolemBase {
 		public EntityLimestoneGolem(World world) {
 			super(world, MGolemNames.LIMESTONE);
-		}
-		
-		@Override
-		protected EnumParticleTypes getParticle() {
-			return EnumParticleTypes.FALLING_DUST;
 		}
 	}
 	

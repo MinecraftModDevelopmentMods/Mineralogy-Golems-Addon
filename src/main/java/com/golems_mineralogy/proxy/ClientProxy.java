@@ -13,8 +13,10 @@ public class ClientProxy extends CommonProxy {
 		reg(EntityAndesiteGolem.class);
 		reg(EntityBasaltGolem.class);
 		reg(EntityBasalticGlassGolem.class);
+		reg(EntityChertGolem.class);
 		reg(EntityConglomerateGolem.class);
 		reg(EntityDiabaseGolem.class);
+		reg(EntityDioriteGolem.class);
 		reg(EntityDolomiteGolem.class);
 		reg(EntityGabbroGolem.class);
 		reg(EntityGneissGolem.class);

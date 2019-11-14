@@ -11,6 +11,7 @@ public final class InterModComm {
 	public static final String ANDESITE = "andesite";
 	public static final String BASALT = "basalt";
 	public static final String BASALTIC_GLASS = "basaltic_glass";
+	public static final String CHERT = "chert";
 	public static final String CONGLOMERATE = "conglomerate";
 	public static final String DIABASE = "diabase";
 	public static final String DIORITE = "diorite";

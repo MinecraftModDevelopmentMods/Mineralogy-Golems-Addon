@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class EntityQuartziteGolem extends MineralGolemBase {
 
 	public EntityQuartziteGolem(World world) {
-		super(world, MGolemNames.QUARTZITE);
+		super(world, MGolemNames.QUARTZITE_GOLEM);
 		
 	}
 
@@ -29,7 +29,7 @@ public class EntityQuartziteGolem extends MineralGolemBase {
 	
 	@Override
 	public List<String> addSpecialDesc(final List<String> list) {
-		list.add(TextFormatting.AQUA + trans("enchantment.minecraft.thorns") + " " + trans("enchantment.level.1"));
+		list.add(TextFormatting.AQUA + trans("enchantment.thorns") + " " + TextFormatting.AQUA + trans("enchantment.level.1"));
 		return list;
 	}
 }

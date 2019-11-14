@@ -41,8 +41,10 @@ public class CommonProxy {
 		register(EntityAndesiteGolem.class, InterModComm.ANDESITE);
 		register(EntityBasaltGolem.class, InterModComm.BASALT);
 		register(EntityBasalticGlassGolem.class, InterModComm.BASALTIC_GLASS);
+		register(EntityChertGolem.class, InterModComm.CHERT, false);
 		register(EntityConglomerateGolem.class, InterModComm.CONGLOMERATE);
 		register(EntityDiabaseGolem.class, InterModComm.DIABASE);
+		register(EntityDioriteGolem.class, InterModComm.DIORITE);
 		register(EntityDolomiteGolem.class, InterModComm.DOLOMITE);
 		register(EntityGabbroGolem.class, InterModComm.GABBRO);
 		register(EntityGneissGolem.class, InterModComm.GNEISS);

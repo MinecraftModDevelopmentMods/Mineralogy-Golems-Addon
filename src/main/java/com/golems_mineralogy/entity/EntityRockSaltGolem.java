@@ -35,7 +35,7 @@ public class EntityRockSaltGolem extends MineralGolemBase {
 	private boolean allowSpecial;
 
 	public EntityRockSaltGolem(World world) {
-		super(world, MGolemNames.ROCK_SALT);
+		super(world, MGolemNames.ROCK_SALT_GOLEM);
 		final GolemConfigSet cfg = getConfig(this);
 		allowSpecial = cfg.getBoolean(ALLOW_SPECIAL);
 		final IBlockState state = GolemItems.blockLightSource.getDefaultState()

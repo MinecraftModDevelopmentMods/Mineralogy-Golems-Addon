@@ -20,7 +20,7 @@ javadoc {
 
 
 
-version = "7.1.7-0"
+version = "7.1.7-2"
 group= "golems_mineralogy"
 archivesBaseName = "MineralogyGolemsAddon-1.12"
 

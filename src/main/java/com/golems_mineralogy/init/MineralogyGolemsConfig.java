@@ -53,66 +53,68 @@ public class MineralogyGolemsConfig {
 				"When true, golems can be built using both smooth and raw stone");
 	
 		GolemLookup.addConfig(EntityAmphiboliteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.AMPHIBOLITE, 66.0D, 4.5F));
+				new GolemConfigSet(config, MGolemNames.AMPHIBOLITE_GOLEM, 66.0D, 4.5F));
 		GolemLookup.addConfig(EntityAndesiteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.ANDESITE, 48.0D, 3.0F));
+				new GolemConfigSet(config, MGolemNames.ANDESITE_GOLEM, 48.0D, 3.0F));
 		GolemLookup.addConfig(EntityBasaltGolem.class, 
-				new GolemConfigSet(config, MGolemNames.BASALT, 80.0D, 6.0F));
+				new GolemConfigSet(config, MGolemNames.BASALT_GOLEM, 80.0D, 6.0F));
 		GolemLookup.addConfig(EntityBasalticGlassGolem.class, 
-				new GolemConfigSet(config, MGolemNames.BASALTIC_GLASS, 36.0D, 4.5F));
+				new GolemConfigSet(config, MGolemNames.BASALTIC_GLASS_GOLEM, 36.0D, 4.5F));
+		GolemLookup.addConfig(EntityChertGolem.class, 
+				new GolemConfigSet(config, MGolemNames.CHERT_GOLEM, 82.0D, 5.8F));
 		GolemLookup.addConfig(EntityConglomerateGolem.class, 
-				new GolemConfigSet(config, MGolemNames.CONGLOMERATE, 40.0D, 3.0F));
+				new GolemConfigSet(config, MGolemNames.CONGLOMERATE_GOLEM, 40.0D, 3.0F));
 		GolemLookup.addConfig(EntityDiabaseGolem.class, 
-				new GolemConfigSet(config, MGolemNames.DIABASE, 72.0D, 6.0F));
+				new GolemConfigSet(config, MGolemNames.DIABASE_GOLEM, 72.0D, 6.0F));
 		GolemLookup.addConfig(EntityDioriteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.DIORITE, 64.0D, 4.2F));
+				new GolemConfigSet(config, MGolemNames.DIORITE_GOLEM, 64.0D, 4.2F));
 		GolemLookup.addConfig(EntityDolomiteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.DOLOMITE, 50.0D, 6.2F));
+				new GolemConfigSet(config, MGolemNames.DOLOMITE_GOLEM, 50.0D, 6.2F));
 		GolemLookup.addConfig(EntityGabbroGolem.class, 
-				new GolemConfigSet(config, MGolemNames.GABBRO, 80.0D, 6.0F));
+				new GolemConfigSet(config, MGolemNames.GABBRO_GOLEM, 80.0D, 6.0F));
 		GolemLookup.addConfig(EntityGneissGolem.class, 
-				new GolemConfigSet(config, MGolemNames.GNEISS, 88.0D, 4.6F));
+				new GolemConfigSet(config, MGolemNames.GNEISS_GOLEM, 88.0D, 4.6F));
 		GolemLookup.addConfig(EntityGraniteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.GRANITE, 96.0D, 5.5F));
+				new GolemConfigSet(config, MGolemNames.GRANITE_GOLEM, 96.0D, 5.5F));
 		GolemLookup.addConfig(EntityHornfelsGolem.class, 
-				new GolemConfigSet(config, MGolemNames.HORNFELS, 60.0D, 6.5F));
+				new GolemConfigSet(config, MGolemNames.HORNFELS_GOLEM, 60.0D, 6.5F));
 		GolemLookup.addConfig(EntityLimestoneGolem.class, 
-				new GolemConfigSet(config, MGolemNames.LIMESTONE, 42.0D, 3.0F));
+				new GolemConfigSet(config, MGolemNames.LIMESTONE_GOLEM, 42.0D, 3.0F));
 		GolemLookup.addConfig(EntityMarbleGolem.class, 
-				new GolemConfigSet(config, MGolemNames.MARBLE, 46.0D, 4.6F));
+				new GolemConfigSet(config, MGolemNames.MARBLE_GOLEM, 46.0D, 4.6F));
 		GolemLookup.addConfig(EntityNovaculiteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.NOVACULITE, 82.0D, 4.0F));
+				new GolemConfigSet(config, MGolemNames.NOVACULITE_GOLEM, 82.0D, 4.0F));
 		GolemLookup.addConfig(EntityPegmatiteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.PEGMATITE, 84.0D, 5.0F));
+				new GolemConfigSet(config, MGolemNames.PEGMATITE_GOLEM, 84.0D, 5.0F));
 		GolemLookup.addConfig(EntityPeridotiteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.PERIDOTITE, 70.0D, 5.8F));
+				new GolemConfigSet(config, MGolemNames.PERIDOTITE_GOLEM, 70.0D, 5.8F));
 		GolemLookup.addConfig(EntityPhosphorousGolem.class, 
-				new GolemConfigSet(config, MGolemNames.PHOSPHOROUS, 56.0D, 3.0F)
+				new GolemConfigSet(config, MGolemNames.PHOSPHOROUS_GOLEM, 56.0D, 3.0F)
 				.addKey(EntityPhosphorousGolem.ALLOW_SPECIAL, true, "Whether this golem burns spontaneously"));
 		GolemLookup.addConfig(EntityPhylliteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.PHYLLITE, 44.0D, 3.5F));
+				new GolemConfigSet(config, MGolemNames.PHYLLITE_GOLEM, 44.0D, 3.5F));
 		GolemLookup.addConfig(EntityQuartziteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.QUARTZITE, 86.0D, 6.0F));
+				new GolemConfigSet(config, MGolemNames.QUARTZITE_GOLEM, 86.0D, 6.0F));
 		GolemLookup.addConfig(EntityRhyoliteGolem.class, 
-				new GolemConfigSet(config, MGolemNames.RHYOLITE, 64.0D, 4.2F));
+				new GolemConfigSet(config, MGolemNames.RHYOLITE_GOLEM, 64.0D, 4.2F));
 		GolemLookup.addConfig(EntityRockSaltGolem.class, 
-				new GolemConfigSet(config, MGolemNames.ROCK_SALT, 40.0D, 2.5F)
+				new GolemConfigSet(config, MGolemNames.ROCK_SALT_GOLEM, 40.0D, 2.5F)
 				.addKey(EntityRockSaltGolem.ALLOW_SPECIAL, true, "Whether the golem can emit light")
 				.addKey(EntityRockSaltGolem.FREQUENCY, 2, 1, 24000, "Number of ticks between light updates"));
 		GolemLookup.addConfig(EntitySchistGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SCHIST, 70.0D, 4.1F));
+				new GolemConfigSet(config, MGolemNames.SCHIST_GOLEM, 70.0D, 4.1F));
 		GolemLookup.addConfig(EntityScoriaGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SCORIA, 70.0D, 4.0F));
+				new GolemConfigSet(config, MGolemNames.SCORIA_GOLEM, 70.0D, 4.0F));
 		GolemLookup.addConfig(EntityShaleGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SHALE, 34.0D, 3.5F));
+				new GolemConfigSet(config, MGolemNames.SHALE_GOLEM, 34.0D, 3.5F));
 		GolemLookup.addConfig(EntitySiltstoneGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SILTSTONE, 36.0D, 3.2F));
+				new GolemConfigSet(config, MGolemNames.SILTSTONE_GOLEM, 36.0D, 3.2F));
 		GolemLookup.addConfig(EntitySlateGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SLATE, 40.0D, 3.2F));
+				new GolemConfigSet(config, MGolemNames.SLATE_GOLEM, 40.0D, 3.2F));
 		GolemLookup.addConfig(EntitySulfurGolem.class, 
-				new GolemConfigSet(config, MGolemNames.SULFUR, 44.0D, 5.0F));
+				new GolemConfigSet(config, MGolemNames.SULFUR_GOLEM, 44.0D, 5.0F));
 		GolemLookup.addConfig(EntityTuffGolem.class, 
-				new GolemConfigSet(config, MGolemNames.TUFF, 40.0D, 3.0F));
+				new GolemConfigSet(config, MGolemNames.TUFF_GOLEM, 40.0D, 3.0F));
 	
 		config.save();
 	}

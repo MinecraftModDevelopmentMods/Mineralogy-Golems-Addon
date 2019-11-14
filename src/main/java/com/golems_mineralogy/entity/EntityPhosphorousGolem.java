@@ -20,7 +20,7 @@ public static final String ALLOW_SPECIAL = "Allow Special: Fire";
 	private boolean allowBurn;
 	
 	public EntityPhosphorousGolem(World world) {
-		super(world, MGolemNames.PHOSPHOROUS);
+		super(world, MGolemNames.PHOSPHOROUS_GOLEM);
 		this.allowBurn = getConfig(this).getBoolean(ALLOW_SPECIAL);
 	}
 	

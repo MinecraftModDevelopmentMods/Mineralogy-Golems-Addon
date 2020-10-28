@@ -1,8 +1,5 @@
 package com.golems_mineralogy.proxy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -13,8 +10,8 @@ import com.golems.util.GolemLookup;
 import com.golems_mineralogy.entity.*;
 import com.golems_mineralogy.entity.MineralGolemBase.*;
 import com.golems_mineralogy.init.InterModComm;
-import com.golems_mineralogy.init.MGolemNames;
 import com.golems_mineralogy.init.MineralogyGolemsConfig;
+import com.google.common.collect.Lists;
 import com.golems_mineralogy.init.MineralogyGolems;
 import com.mcmoddev.mineralogy.data.Material;
 import com.mcmoddev.mineralogy.data.MaterialData;
@@ -89,8 +86,10 @@ public class CommonProxy {
 	}
 	
 	/** HELPER METHOD to register a golem with its material **/
-	protected static void register(final Class<? extends GolemBase> entityClass, final String blockName, final boolean polished) {
-		register(entityClass, "golem_".concat(blockName), polished ? getBoth(blockName) : getAll(blockName));
+	protected static void register(final Class<? extends GolemBase> entityClass, final String blockName, 
+			final boolean polished, Block... additionalBlocks) {
+		register(entityClass, "golem_".concat(blockName), 
+				polished ? getBothAnd(additionalBlocks, blockName) : getAllAnd(additionalBlocks, blockName));
 	}
 
 	/**
@@ -132,8 +131,8 @@ public class CommonProxy {
 	 * @return an array of blocks matching the given names
 	 * where none of the array elements are null. May be empty.
 	 **/
-	protected static Block[] getAll(final String... mineralogyNames) {
-		List<Block> list = new ArrayList<>();
+	protected static Block[] getAllAnd(final Block[] additionalBlocks, final String... mineralogyNames) {
+		List<Block> list = Lists.newArrayList(additionalBlocks);
 		for(final String s : mineralogyNames) {
 			final Block b = get(s);
 			if(b != null) {
@@ -150,12 +149,12 @@ public class CommonProxy {
 	 * @return an array of blocks where no array elements are null. May be empty.
 	 * Only includes raw stone if allowed by config.
 	 **/
-	protected static Block[] getBoth(final String mineralogyName) {
+	protected static Block[] getBothAnd(final Block[] blocks, final String mineralogyName) {
 		final String smooth = mineralogyName.concat("_smooth");
 		if(MineralogyGolemsConfig.useRawOrSmooth()) {
-			return getAll(mineralogyName, smooth);
+			return getAllAnd(blocks, mineralogyName, smooth);
 		} else {
-			return getAll(smooth);
+			return getAllAnd(blocks, smooth);
 		}
 	}
 	
